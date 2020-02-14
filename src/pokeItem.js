@@ -12,10 +12,10 @@ export default class PokeItem extends Component {
                 <div className = "pokemonCard-img">
                     <img src={this.props.pokemonCard.url_image} alt={this.props.pokemonCard.pokemon}></img>
                 </div>
-                    <p>{this.props.pokemonCard.height}</p>
-                    <p>{this.props.pokemonCard.description}</p>
-                    <p>{this.props.pokemonCard.weight}</p>
-                    <p>{this.props.pokemonCard.hp}</p>
+                    <p>{this.props.pokemonCard.height}Height</p>
+                    <p>{this.props.pokemonCard.description}Description</p>
+                    <p>{this.props.pokemonCard.weight}Weight</p>
+                    <p>{this.props.pokemonCard.hp}HP</p>
             </article>
            
 
