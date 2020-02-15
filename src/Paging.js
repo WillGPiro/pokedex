@@ -19,6 +19,7 @@ export default class Paging extends Component {
         const queryString  = window.location.hash.slice(1);
         const searchParams = new URLSearchParams(queryString);
         searchParams.set("page", page + increment);
+        window.location.hash = searchParams.toString();
 
     }
 
@@ -28,10 +29,10 @@ export default class Paging extends Component {
         const queryString = window.location.hash.slice(1);
         const searchParams = new URLSearchParams(queryString); 
 
-        let pageToVisit = page;
+        let pageToVisit = {page};
 
 //Number (is a built in class) takes whatever argument passed and returns a number.
-        const parsedPage = Number(searchParams.get("page"), 5);
+        const parsedPage = Number(searchParams.get("page"), 10);
         if (isNaN(parsedPage)) {
             pageToVisit = 1;
         } else {
@@ -67,9 +68,10 @@ export default class Paging extends Component {
               <button
                 className="prev"
                 onClick={() => this.updatePage(-1)}
-                disabled={pageToVisit === 1 ? "true" : ""}
+                disabled={pageToVisit === 1 ? true : ""}
                 type="button"
               >
+            ◀
               </button>
               <span>
                 Page
@@ -82,6 +84,7 @@ export default class Paging extends Component {
                 onClick={() => this.updatePage(1)}
                 type="button"
               >
+              ▶
               </button>
             </p>
           );

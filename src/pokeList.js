@@ -10,7 +10,7 @@ export default class PokeList extends Component {
         const mappedCards = pokemonAPIData.map((object, index) => {
            return <PokeItem pokemonCard = {object} key={index}/>
         })
-        
+    
         
         return (
           <section>

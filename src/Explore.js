@@ -9,10 +9,8 @@ export default class Explore extends Component {
   
     async loadPokemon() {
       const response = await getPokemon();
-      console.log("response",response)
-      const pokemonItemData = response.counts;
-      const totalResults = response.totalResults;
-      console.log("||", pokemonItemData);
+      const pokemonItemData = response.results;
+      const totalResults = response.count;
       this.setState({ pokemonItemData, totalResults });
     }
   
@@ -28,16 +26,15 @@ export default class Explore extends Component {
   
     render() {
       const { pokemonItemData, totalResults } = this.state;
-  console.log(pokemonItemData)
       return (
         <div>
           {/* <Header headerText="Welcome to Alchemy Movie Database" /> */}
           <main>
-            <section class="options-section">
+            <section className="options-section">
               <Search />
             </section>
   
-            <section class="list-section">  
+            <section className="list-section">  
               <PokeList pokemonData={pokemonItemData} />
               <Paging totalResults={totalResults} />
             </section>

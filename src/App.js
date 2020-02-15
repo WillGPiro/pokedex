@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import PokeList from './pokeList';
 import request from 'superagent';
 import Search from './SearchOptions'
 import {getPokemon} from './pokemon-api';
@@ -33,7 +32,6 @@ export default class App extends Component {
       return (
       <div>
         <div className = "card-page">
-         < PokeList pokemonData = {this.state.pokemonItemData}/>
          < Search />
          <Explore />
         </div>
